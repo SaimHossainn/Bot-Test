@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Bot Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Bot Dashboard</h2>
+            <ul class="nav">
+                <li class="nav-item active" data-feature="verification">
+                    <span class="nav-icon">✅</span>
+                    <span class="nav-text">Verification</span>
+                </li>
+                <!-- Additional features can be added here -->
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Verification Settings</h1>
+            </div>
+
+            <div class="content">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Verification Configuration</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="verification-form">
+                            <div class="form-group">
+                                <label for="enabled">Enable Verification</label>
+                                <label class="switch">
+                                    <input type="checkbox" id="enabled" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="type">Verification Type</label>
+                                <select id="type">
+                                    <option value="one_click">One-Click Verification</option>
+                                    <option value="captcha">Captcha Verification</option>
+                                    <option value="math">Math Verification</option>
+                                    <option value="reaction">Reaction Verification</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text" id="title" placeholder="Verification Required">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea id="description" placeholder="Please verify yourself to access the server"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="send_method">Send Method</label>
+                                <select id="send_method">
+                                    <option value="dm">Direct Message</option>
+                                    <option value="channel">Channel Message</option>
+                                </select>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" id="reset-btn" class="btn btn-secondary">Reset to Defaults</button>
+                                <button type="submit" class="btn btn-primary">Save Settings</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Live Preview -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Live Preview</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="preview-container">
+                            <div class="preview-card">
+                                <h3 id="preview-title">Verification Required</h3>
+                                <p id="preview-description">Please verify yourself to access the server</p>
+                                <button class="preview-button">Verify</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
